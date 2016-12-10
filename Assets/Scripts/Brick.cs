@@ -10,15 +10,16 @@ public class Brick : MonoBehaviour
 	void Start ()
 	{
 		timesHit = 0;
-		maxHits = 3;
 		levelManager = GameObject.FindObjectOfType<LevelManager> ();
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		timesHit += 1;
+		timesHit >= 1;
 		print (timesHit);
-		SimulateWin ();
+		if (timesHit == maxHits) {
+			Destroy (gameObject);
+		}
 	}
 	//TODO remove this method
 	void SimulateWin ()

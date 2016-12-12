@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class Paddle : MonoBehaviour
-
 {
-public AudioClip boing
+	public AudioClip boing;
 	// Use this for initialization
 	void Start ()
 	{
@@ -21,8 +20,9 @@ public AudioClip boing
 		this.transform.position = paddlePos;
 	}
 	
-	void oncollisionenter2d (Collision collision){
-		AudioSource.PlayClipAtPoint(boing)
+	void oncollisionenter2d (Collision collision)
+	{
+		AudioSource.PlayClipAtPoint (boing, transform.position);
 	}
 		
 }
